@@ -3,12 +3,17 @@ app.factory('servicesData', function () {
         {
             id: 1,
             name: 'Dropbox',
-            icon: 'http://www.iconarchive.com/download/i94306/bokehlicia/captiva/dropbox.ico'
+            icon: 'app/resources/images/service-dropbox.png'
         },
         {
             id: 2,
             name: 'Google Drive',
-            icon: 'https://skyvia.com/connectors/images/google-drive.png'
+            icon: 'app/resources/images/service-google-drive.png'
+        },
+        {
+            id: 3,
+            name: 'iCloud',
+            icon: 'app/resources/images/service-icloud.png'
         }
     ];
 });
