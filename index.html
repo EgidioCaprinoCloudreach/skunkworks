@@ -99,9 +99,7 @@
         <ui-view layout="column" layout-fill layout-padding>
             <div class="inset" hide-sm></div>
 
-            <md-content layout-padding ng-view="">
-
-            </md-content>
+            <md-content layout-padding ng-view="" style="background-color: white;"></md-content>
 
 
             <!--<ng-switch on="data.selectedIndex" class="tabpanel-container">-->
@@ -190,6 +188,10 @@
 <script src="//rawgit.com/shuyu/angular-material-fileinput/master/dist/lf-ng-md-file-input.js"></script>
 
 <script src="app/app.js"></script>
+
 <script src="app/controllers/upload-controller.js"></script>
+
+<script src="app/models/services.js"></script>
+<script src="app/models/accounts.js"></script>
 </body>
 </html>
