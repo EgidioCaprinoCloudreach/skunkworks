@@ -1,71 +1,27 @@
-<h4>Current storage status for your accounts:</h4>
+<div ng-controller="DashboardController">
 
-<div ng-cloak>
-    
-    <!-- Google drive -->    
-    
-    <md-toolbar md-theme="light-green">
-        <h2 class="md-toolbar-tools">
-            <span><img src="app/resources/images/service-google-drive.png" class="service-logo"></span>
-            <span>Google Drive</span>
-        </h2>
-    </md-toolbar>
-    <md-content>
-        <md-list>
-            <md-list-item class="md-3-line">
-                <div class="md-list-item-text">
-                    <h3>Google Drive - Cloudreach (cloud@cloudreach.com)</h3>
-                    <h4><md-progress-linear md-mode="determinate" value="80"></md-progress-linear></h4>
-                    <p>16Gb used (20Gb total)</p>
-                </div>
-            </md-list-item>
-            <md-list-item class="md-3-line">
-                <div class="md-list-item-text">
-                    <h3>Google Drive - Personal account (account@gmail.com)</h3>
-                    <h4><md-progress-linear md-mode="determinate" value="10"></md-progress-linear></h4>
-                    <p>2Gb used (20Gb total)</p>
-                </div>
-            </md-list-item>
-        </md-list>
-    </md-content>
-    
-    <!-- Dropbox -->
-    
-    <md-toolbar class="md-theme-light">
-        <h2 class="md-toolbar-tools">
-            <span><img src="app/resources/images/service-dropbox.png" class="service-logo"></span>
-            <span>Dropbox</span>
-        </h2>
-    </md-toolbar>
-    <md-content>
-        <md-list>
-            <md-list-item class="md-3-line">
-                <div class="md-list-item-text">
-                    <h3>Dropbox - account A (emailA@domain.com)</h3>
-                    <h4><md-progress-linear md-mode="determinate" value="50"></md-progress-linear></h4>
-                    <p>10Gb used (20Gb total)</p>
-                </div>
-            </md-list-item>
-        </md-list>
-    </md-content>
-    
-    <!-- iCloud -->
-    
-    <md-toolbar class="md-theme-light">
-        <h2 class="md-toolbar-tools">
-            <span><img src="app/resources/images/service-icloud.png" class="service-logo"></span>
-            <span>iCloud</span>
-        </h2>
-    </md-toolbar>
-    <md-content>
-        <md-list>
-            <md-list-item class="md-3-line">
-                <div class="md-list-item-text">
-                    <h3>iCloud - account B (accountB@domain.com)</h3>
-                    <h4><md-progress-linear md-mode="determinate" value="25"></md-progress-linear></h4>
-                    <p>5Gb used (20Gb total)</p>
-                </div>
-            </md-list-item>
-        </md-list>
-    </md-content>
+    <h4>Current storage status for your accounts:</h4>
+
+    <div ng-repeat="service in serviceList">
+        <md-toolbar>
+            <h2 class="md-toolbar-tools">
+                    <span><img ng-src="{{service.icon}}" class="service-logo"></span>
+                    <span>{{service.name}}</span>
+                </h2>
+        </md-toolbar>
+        
+        <md-content ng-repeat="acc in getAccountByService(service.id)">
+            <md-list>
+                <md-list-item class="md-3-line">
+                    <div class="md-list-item-text">
+                        <h3>{{acc.name}}</h3>
+                        <h4><md-progress-linear md-mode="determinate" ng-value="getUsage(acc)"></md-progress-linear></h4>
+                        <p>Used: {{getAccountSizeFormatted(acc.size.used, 2)}} 
+                            (Total: {{getAccountSizeFormatted(acc.size.total,2)}})</p>
+                    </div>
+                </md-list-item>
+            </md-list>
+        </md-content>
+
+    </div>
 </div>
