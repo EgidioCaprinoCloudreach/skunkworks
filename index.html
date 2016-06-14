@@ -108,119 +108,115 @@
                 </div>
                 </md-autocomplete>
                 </span>
+            </div>
+        </md-toolbar>
+        <md-content flex>
+            <ui-view layout="column" layout-fill layout-padding>
+                <div class="inset" hide-sm></div>
 
-        </div>
-    </md-toolbar>
-    <md-content flex>
-        <ui-view layout="column" layout-fill layout-padding>
-            <div class="inset" hide-sm></div>
-
-            <md-content layout-padding ng-view="" style="background-color: white;"></md-content>
+                <md-content layout-padding ng-view="" style="background-color: white;"></md-content>
 
 
-            <!--<ng-switch on="data.selectedIndex" class="tabpanel-container">-->
-            <!--<div role="tabpanel"-->
-            <!--id="tab1-content"-->
-            <!--aria-labelledby="tab1"-->
-            <!--ng-switch-when="0"-->
-            <!--md-swipe-left="next()"-->
-            <!--md-swipe-right="previous()"-->
-            <!--layout="row" layout-align="center center">-->
-            <!--<div flex-gt-sm="90" flex-gt-md="80">-->
-            <!--<h2 class="md-title inset">Latest Activity</h2>-->
-            <!--<md-card>-->
-            <!--<md-list>-->
-            <!--<md-list-item class="md-3-line" ng-repeat="item in activity | filter:search">-->
-            <!--<md-icon class="md-avatar" hide-sm md-svg-icon="avatars:{{item.avatar}}"></md-icon>-->
-            <!--<div class="md-list-item-text">-->
-            <!--<h3>{{item.what}}</h3>-->
-            <!--<h4>{{item.who}}</h4>-->
-            <!--<p>{{item.notes}}</p>-->
-            <!--</div>-->
-            <!--<md-divider md-inset hide-sm ng-if="!$last"></md-divider>-->
-            <!--<md-divider hide-gt-sm ng-if="!$last"></md-divider>-->
-            <!--</md-list-item>-->
-            <!--<md-divider></md-divider>-->
-            <!--<md-list-item>-->
-            <!--<md-button class="md-primary">-->
-            <!--<md-icon md-svg-icon="navigation:ic_arrow_forward_24px"-->
-            <!--aria-label="Forward"></md-icon>-->
-            <!--<span>More</span>-->
-            <!--</md-button>-->
-            <!--</md-list-item>-->
-            <!--</md-list>-->
-            <!--</md-card>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div role="tabpanel"-->
-            <!--id="tab2-content"-->
-            <!--aria-labelledby="tab2"-->
-            <!--ng-switch-when="1"-->
-            <!--md-swipe-left="next()"-->
-            <!--md-swipe-right="previous()"-->
-            <!--layout="row" layout-align="center center">-->
-            <!--<div flex-gt-sm="90" flex-gt-md="80">-->
-            <!--<h2 class="md-title inset">Favorites</h2>-->
-            <!--<md-card>-->
-            <!--<md-list>-->
-            <!--<md-list-item class="md-3-line"-->
-            <!--ng-repeat="item in activity | filter:search | orderBy:'-what'">-->
-            <!--<md-icon class="md-avatar" hide-sm md-svg-icon="avatars:{{item.avatar}}"></md-icon>-->
-            <!--<div class="md-list-item-text">-->
-            <!--<h3>{{item.what}}</h3>-->
-            <!--<h4>{{item.who}}</h4>-->
-            <!--<p>{{item.notes}}</p>-->
-            <!--</div>-->
-            <!--<md-divider md-inset hide-sm ng-if="!$last"></md-divider>-->
-            <!--<md-divider hide-gt-sm ng-if="!$last"></md-divider>-->
-            <!--</md-list-item>-->
-            <!--<md-divider></md-divider>-->
-            <!--<md-list-item>-->
-            <!--<md-button class="md-primary">-->
-            <!--<md-icon md-svg-icon="navigation:ic_arrow_forward_24px"-->
-            <!--aria-label="Forward"></md-icon>-->
-            <!--<span>More</span>-->
-            <!--</md-button>-->
-            <!--</md-list-item>-->
-            <!--</md-list>-->
-            <!--</md-card>-->
-            <!--</div>-->
+                <!--<ng-switch on="data.selectedIndex" class="tabpanel-container">-->
+                <!--<div role="tabpanel"-->
+                <!--id="tab1-content"-->
+                <!--aria-labelledby="tab1"-->
+                <!--ng-switch-when="0"-->
+                <!--md-swipe-left="next()"-->
+                <!--md-swipe-right="previous()"-->
+                <!--layout="row" layout-align="center center">-->
+                <!--<div flex-gt-sm="90" flex-gt-md="80">-->
+                <!--<h2 class="md-title inset">Latest Activity</h2>-->
+                <!--<md-card>-->
+                <!--<md-list>-->
+                <!--<md-list-item class="md-3-line" ng-repeat="item in activity | filter:search">-->
+                <!--<md-icon class="md-avatar" hide-sm md-svg-icon="avatars:{{item.avatar}}"></md-icon>-->
+                <!--<div class="md-list-item-text">-->
+                <!--<h3>{{item.what}}</h3>-->
+                <!--<h4>{{item.who}}</h4>-->
+                <!--<p>{{item.notes}}</p>-->
+                <!--</div>-->
+                <!--<md-divider md-inset hide-sm ng-if="!$last"></md-divider>-->
+                <!--<md-divider hide-gt-sm ng-if="!$last"></md-divider>-->
+                <!--</md-list-item>-->
+                <!--<md-divider></md-divider>-->
+                <!--<md-list-item>-->
+                <!--<md-button class="md-primary">-->
+                <!--<md-icon md-svg-icon="navigation:ic_arrow_forward_24px"-->
+                <!--aria-label="Forward"></md-icon>-->
+                <!--<span>More</span>-->
+                <!--</md-button>-->
+                <!--</md-list-item>-->
+                <!--</md-list>-->
+                <!--</md-card>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div role="tabpanel"-->
+                <!--id="tab2-content"-->
+                <!--aria-labelledby="tab2"-->
+                <!--ng-switch-when="1"-->
+                <!--md-swipe-left="next()"-->
+                <!--md-swipe-right="previous()"-->
+                <!--layout="row" layout-align="center center">-->
+                <!--<div flex-gt-sm="90" flex-gt-md="80">-->
+                <!--<h2 class="md-title inset">Favorites</h2>-->
+                <!--<md-card>-->
+                <!--<md-list>-->
+                <!--<md-list-item class="md-3-line"-->
+                <!--ng-repeat="item in activity | filter:search | orderBy:'-what'">-->
+                <!--<md-icon class="md-avatar" hide-sm md-svg-icon="avatars:{{item.avatar}}"></md-icon>-->
+                <!--<div class="md-list-item-text">-->
+                <!--<h3>{{item.what}}</h3>-->
+                <!--<h4>{{item.who}}</h4>-->
+                <!--<p>{{item.notes}}</p>-->
+                <!--</div>-->
+                <!--<md-divider md-inset hide-sm ng-if="!$last"></md-divider>-->
+                <!--<md-divider hide-gt-sm ng-if="!$last"></md-divider>-->
+                <!--</md-list-item>-->
+                <!--<md-divider></md-divider>-->
+                <!--<md-list-item>-->
+                <!--<md-button class="md-primary">-->
+                <!--<md-icon md-svg-icon="navigation:ic_arrow_forward_24px"-->
+                <!--aria-label="Forward"></md-icon>-->
+                <!--<span>More</span>-->
+                <!--</md-button>-->
+                <!--</md-list-item>-->
+                <!--</md-list>-->
+                <!--</md-card>-->
+                <!--</div>-->
 
-            <!--</div>-->
+                <!--</div>-->
 
-            <!--</ng-switch>-->
+                <!--</ng-switch>-->
 
-        </ui-view>
-    </md-content>
-</div>
-<!-- Angular Material Dependencies -->
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.js"></script>
+            </ui-view>
+        </md-content>
+    </div>
+    <!-- Angular Material Dependencies -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.js"></script>
 
-<!-- Angular Material -->
-<script src="//ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.js"></script>
-<script src="//rawgit.com/shuyu/angular-material-fileinput/master/dist/lf-ng-md-file-input.js"></script>
+    <!-- Angular Material -->
+    <script src="//ajax.googleapis.com/ajax/libs/angular_material/1.0.9/angular-material.min.js"></script>
+    <script src="//rawgit.com/shuyu/angular-material-fileinput/master/dist/lf-ng-md-file-input.js"></script>
 
-<script src="app/app.js"></script>
+    <script src="app/app.js"></script>
 
-<!-- Conrollers -->
-<script src="app/controllers/upload-controller.js"></script>
-<script src="app/controllers/dashboard-controller.js"></script>
-<script src="app/controllers/accounts-controller.js"></script>
-<script src="app/controllers/search-controller.js"></script>
-<script src="app/controllers/settings-controller.js"></script>
-<script src="app/controllers/upload-rules-controller.js"></script>
-<script src="app/controllers/title-controller.js"></script>
+    <!-- Conrollers -->
+    <script src="app/controllers/upload-controller.js"></script>
+    <script src="app/controllers/dashboard-controller.js"></script>
+    <script src="app/controllers/accounts-controller.js"></script>
+    <script src="app/controllers/search-controller.js"></script>
+    <script src="app/controllers/settings-controller.js"></script>
+    <script src="app/controllers/upload-rules-controller.js"></script>
 
-<script src="app/services/file-service.js"></script>
-<script src="app/services/image-service.js"></script>
-
-<!-- Models -->
-<script src="app/models/services.js"></script>
-<script src="app/models/accounts.js"></script>
-<script src="app/models/files.js"></script>
+    <!-- Models -->
+    <script src="app/models/services.js"></script>
+    <script src="app/models/accounts.js"></script>
+    <script src="app/models/criteria.js"></script>
+    <script src="app/models/files.js"></script>
 </body>
 
 </html>
