@@ -10,6 +10,22 @@ app.config(function ($routeProvider) {
             templateUrl: 'app/partials/dashboard.html',
             controller: 'DashboardController'
         })
+        .when('/search', {
+            templateUrl: 'app/partials/search.html',
+            controller: 'SearchController'
+        })
+        .when('/accounts', {
+            templateUrl: 'app/partials/accounts.html',
+            controller: 'AccountsController'
+        })
+        .when('/rules', {
+            templateUrl: 'app/partials/upload-rules.html',
+            controller: 'DashboardController'
+        })
+        .when('/settings', {
+            templateUrl: 'app/partials/settings.html',
+            controller: 'SettingsController'
+        })
         .otherwise('/dashboard');
 });
 
