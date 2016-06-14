@@ -1,4 +1,10 @@
-<table>
+<lf-ng-md-file-input lf-files='files' multiple progress drag></lf-ng-md-file-input>
+
+<md-switch ng-model="customRules" aria-label="Define target">
+    Use custom rules
+</md-switch>
+
+<table ng-if="customRules">
     <tbody>
     <tr ng-repeat="account in accounts">
         <td>
@@ -23,8 +29,6 @@
     </tr>
     </tbody>
 </table>
-
-<lf-ng-md-file-input lf-files='files' multiple progress drag></lf-ng-md-file-input>
 
 <p style="text-align: right;">
     <md-button class="md-fab md-mini md-primary">

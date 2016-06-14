@@ -1,3 +1,46 @@
-<div ng-controller="searchController">
+<div ng-controller="SearchController">
+
+    <table>
+        <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th>Filename</th>
+            <th>Size</th>
+            <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr ng-repeat="file in files">
+            <td style="padding-bottom: 40px;">
+                <md-checkbox ng-model="file.selected"></md-checkbox>
+            </td>
+            <td style="padding-bottom: 40px; padding-right: 30px;">
+                <div ng-repeat="account in file.accounts">
+                    <img src="{{account.icon}}" style="height: 16px;">
+                    <span style="font-size: 16px;">{{ account.percentage }}%</span>
+                </div>
+            </td>
+            <td style="padding-bottom: 40px;">
+                {{ file.name }}
+            </td>
+            <td style="padding-bottom: 40px;">
+                {{ FileService.getAccountSizeFormatted(file.size, 2) }}
+            </td>
+            <td style="padding-bottom: 40px;">
+                <md-button class="md-fab md-mini md-primary">
+                    <md-icon md-svg-icon="file:ic_file_download_24px"></md-icon>
+                </md-button>
+                <md-button class="md-fab md-mini md-primary">
+                    <md-icon md-svg-icon="editor:ic_border_color_24px"></md-icon>
+                </md-button>
+                <md-button class="md-fab md-mini">
+                    <md-icon md-svg-icon="action:ic_delete_24px"></md-icon>
+                </md-button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 
 </div>
