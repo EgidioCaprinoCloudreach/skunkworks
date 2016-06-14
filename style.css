@@ -58,3 +58,8 @@ md-list-item.md-3-line md-divider[md-inset] {
     width: 40px;
     padding: 5px;
 }
+
+a.noLink {
+    text-decoration: none;
+    color: #000;
+}
