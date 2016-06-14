@@ -5,19 +5,26 @@
     <div ng-repeat="service in serviceList">
         <md-toolbar>
             <h2 class="md-toolbar-tools">
-                    <span><img ng-src="{{service.icon}}" class="service-logo"></span>
-                    <span>{{service.name}}</span>
-                </h2>
+                <span style="width:8%"><img ng-src="{{service.icon}}" class="service-logo"></span>
+                <span style="width:30%">{{service.name}}</span>
+                <span style="width:65%; text-align:right;">
+                    <md-button class="md-fab" aria-label="Add Account" ng-click="showPrompt($event)">
+                        <md-icon md-svg-icon="content:ic_add_24px" aria-label="Plus"></md-icon>
+                    </md-button>
+                </span>                    
+                <div style="clear:both"></div>
+            </h2>
         </md-toolbar>
         
         <md-content ng-repeat="acc in getAccountByService(service.id)">
             <md-list>
                 <md-list-item class="md-3-line">
                     <div class="md-list-item-text">
-                        <h3>{{acc.name}}</h3>
-                        <h4><md-progress-linear md-mode="determinate" ng-value="getUsage(acc)"></md-progress-linear></h4>
-                        <p>Used: {{getAccountSizeFormatted(acc.size.used, 2)}} 
-                            (Total: {{getAccountSizeFormatted(acc.size.total,2)}})</p>
+                        <span style="width:100px; text-align:left">
+                            <md-icon md-svg-icon="action:ic_delete_24px"></md-icon>
+                            <md-icon md-svg-icon="action:ic_settings_24px"></md-icon>
+                        </span>                                                
+                        {{acc.name}} ({{acc.login}})
                     </div>
                 </md-list-item>
             </md-list>

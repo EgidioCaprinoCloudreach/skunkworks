@@ -1,3 +1,72 @@
 <div ng-controller="UploadRulesController">
 
+    <md-toolbar>
+        <h2 class="md-toolbar-tools">
+                <span style="width:30%">Upload rules</span>
+                <span style="width:70%; text-align:right;">
+                    <md-button class="md-fab" aria-label="Add Upload Rule" ng-click="">
+                        <md-icon md-svg-icon="content:ic_add_24px" aria-label="Plus"></md-icon>
+                    </md-button>
+                </span>
+            </h2>
+    </md-toolbar>
+
+    <div class="md-padding" ng-cloak>
+        <div style="border-radius: 5px; border:1px solid #CCC; padding: 5px">
+            <h2 class="md-title">Create a new rule</h2>
+            <div layout="row">
+                <md-input-container style="margin-right: 50px;">
+                    <label>Criterion</label>
+                    <md-select ng-model="criterion">
+                        <md-option ng-repeat="criterion in criteriaList" value="{{criterion.label}}">{{criterion.label}}</md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container style="margin-right: 50px;">
+                    <label>Comparator</label>
+                    <md-select ng-model="a">
+                        <md-option value="equals">equals</md-option>
+                        <md-option value="greater than">greater than</md-option>
+                        <md-option value="less than">less than</md-option>
+                        <md-option value="equal or greater than">equal or greater than</md-option>
+                        <md-option value="equal or less than">equal or less than</md-option>
+                        <md-option value="contains">contains</md-option>
+                        <md-option value="not contaning">not contaning</md-option>
+                    </md-select>
+                </md-input-container>
+
+                <md-input-container style="margin-right: 100px;">
+                    <label>Value</label>
+                    <input md-minlength="1" required md-no-asterisk name="value">
+                </md-input-container>
+
+                <md-input-container>
+                    <label><a style="color:blue; text-decoration:underline">Add new rule</a></label>
+                </md-input-container>
+            </div>
+
+            <div layout="row">
+                Select upload account:
+            </div>
+
+            <div layout="row">
+                <md-input-container style="margin-right: 50px;">
+                    <label>Account</label>
+                    <md-select ng-model="acc">
+                        <md-option ng-repeat="acc in serviceList" value="{{acc}}">{{acc}}</md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+
+            <md-content>
+                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                    
+                    <md-button md-no-ink class="md-primary">Save</md-button>
+                    <md-button class="">Cancel</md-button>                   
+                    
+                </section>
+            </md-content>
+
+        </div>
+    </div>
+
 </div>
