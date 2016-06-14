@@ -1,1 +1,33 @@
+<table>
+    <tbody>
+    <tr ng-repeat="account in accounts">
+        <td>
+            <md-checkbox ng-model="account.selected"></md-checkbox>
+        </td>
+        <td>
+            <img style="max-height: 50px;" ng-src="{{ account.icon }}">
+        </td>
+        <td>
+            {{ account.name }}
+        </td>
+        <td>
+            <md-slider-container ng-show="account.selected && getSelectedAccounts().length > 1">
+                <span>%</span>
+                <md-slider flex min="0" max="100" ng-model="account.percentage">
+                </md-slider>
+                <md-input-container>
+                    <input flex type="number" ng-model="account.percentage">
+                </md-input-container>
+            </md-slider-container>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
 <lf-ng-md-file-input lf-files='files' multiple progress drag></lf-ng-md-file-input>
+
+<p style="text-align: right;">
+    <md-button class="md-fab md-mini md-primary">
+        <md-icon md-svg-icon="file:ic_cloud_upload_24px"></md-icon>
+    </md-button>
+</p>

@@ -3,12 +3,12 @@ app.factory('servicesData', function () {
         {
             id: 1,
             name: 'Dropbox',
-            icon: 'http://www.iconarchive.com/download/i94306/bokehlicia/captiva/dropbox.ico'
+            icon: 'https://upload.wikimedia.org/wikipedia/commons/b/bb/Dropbox_logo.svg'
         },
         {
             id: 2,
             name: 'Google Drive',
-            icon: 'https://skyvia.com/connectors/images/google-drive.png'
+            icon: 'https://upload.wikimedia.org/wikipedia/commons/a/ad/Logo_of_Google_Drive.svg'
         }
     ];
 });
