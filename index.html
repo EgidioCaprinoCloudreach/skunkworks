@@ -21,7 +21,9 @@
         <md-list-item class="md-2-line" ng-repeat="item in menu" role="link" md-ink-ripple>
             <md-icon md-svg-icon="{{item.icon}}" aria-label="{{item.title}}"></md-icon>
             <div class="md-list-item-text">
-                <span class="md-body-2">{{item.title}}</span>
+                <a href="{{item.link}}">
+                    <span class="md-body-2">{{item.title}}</span>
+                </a>
             </div>
         </md-list-item>
         <md-divider></md-divider>
@@ -184,16 +186,21 @@
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.js"></script>
+
 <!-- Angular Material -->
 <script src="//ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.js"></script>
-
 <script src="//rawgit.com/shuyu/angular-material-fileinput/master/dist/lf-ng-md-file-input.js"></script>
 
 <script src="app/app.js"></script>
 
+<!-- Conrollers -->
 <script src="app/controllers/upload-controller.js"></script>
 <script src="app/controllers/dashboard-controller.js"></script>
+<script src="app/controllers/accounts-controller.js"></script>
+<script src="app/controllers/search-controller.js"></script>
+<script src="app/controllers/settings-controller.js"></script>
 
+<!-- Models -->
 <script src="app/models/services.js"></script>
 <script src="app/models/accounts.js"></script>
 </body>
