@@ -4,7 +4,10 @@ app.config(function ($routeProvider) {
     $routeProvider.when('/upload', {
         templateUrl: 'app/partials/upload.html',
         controller: 'UploadController'
-    }).otherwise('/upload');
+    }).when('/dashboard', {
+        templateUrl: 'app/partials/dashboard.html',
+        controller: 'DashboardController'
+    }).otherwise('/dashboard');
 });
 
 app.controller('AppCtrl', ['$scope', '$mdBottomSheet', '$mdSidenav', '$mdDialog', function ($scope, $mdBottomSheet, $mdSidenav, $mdDialog) {
@@ -22,34 +25,34 @@ app.controller('AppCtrl', ['$scope', '$mdBottomSheet', '$mdSidenav', '$mdDialog'
     // Menu items
     $scope.menu = [
         {
-            link: '',
+            link: '/dashboard',
+            title: 'Dashboard',
+            icon: 'action:ic_dashboard_24px'
+        },
+        {
+            link: '/upload',
             title: 'Upload a file',
             icon: 'file:ic_cloud_upload_24px' // we have to use Google's naming convention for the IDs of the SVGs in the spritesheet
         },
         {
-            link: '',
-            title: 'Dashboard',
-            icon: 'action:ic_dashboard_24px' // we have to use Google's naming convention for the IDs of the SVGs in the spritesheet
-        },
-        {
-            link: '',
-            title: 'Friends',
-            icon: 'social:ic_group_24px'
-        },
-        {
-            link: '',
-            title: 'Messages',
-            icon: 'communication:ic_message_24px'
+            link: '/search',
+            title: 'Search a file',
+            icon: 'action:ic_search_24px'
         }
     ];
     $scope.admin = [
         {
-            link: '',
-            title: 'Trash',
-            icon: 'action:ic_delete_24px'
+            link: '/accounts',
+            title: 'Accounts',
+            icon: 'social:ic_group_24px'
         },
         {
-            link: 'showListBottomSheet($event)',
+            link: '/rules',
+            title: 'Upload rules',
+            icon: 'action:ic_gavel_24px'
+        },
+        {
+            link: '',
             title: 'Settings',
             icon: 'action:ic_settings_24px'
         }
