@@ -1,0 +1,27 @@
+<div ng-controller="DashboardController">
+
+    <h4>Current storage status for your accounts:</h4>
+
+    <div ng-repeat="service in serviceList">
+        <md-toolbar>
+            <h2 class="md-toolbar-tools">
+                    <span><img ng-src="{{service.icon}}" class="service-logo"></span>
+                    <span>{{service.name}}</span>
+                </h2>
+        </md-toolbar>
+        
+        <md-content ng-repeat="acc in getAccountByService(service.id)">
+            <md-list>
+                <md-list-item class="md-3-line">
+                    <div class="md-list-item-text">
+                        <h3>{{acc.name}}</h3>
+                        <h4><md-progress-linear md-mode="determinate" ng-value="getUsage(acc)"></md-progress-linear></h4>
+                        <p>Used: {{getAccountSizeFormatted(acc.size.used, 2)}} 
+                            (Total: {{getAccountSizeFormatted(acc.size.total,2)}})</p>
+                    </div>
+                </md-list-item>
+            </md-list>
+        </md-content>
+
+    </div>
+</div>

@@ -5,7 +5,7 @@ app.factory('accountsData', function () {
             idService: 1,
             name: 'Dropbox Home',
             size: {
-                total: 2e+9,
+                total: 3e+9,
                 used: 1.5e+9
             }
         },
@@ -14,8 +14,8 @@ app.factory('accountsData', function () {
             idService: 1,
             name: 'Dropbox Work',
             size: {
-                total: 2e+9,
-                used: 1.5e+9
+                total: 1.5e+9,
+                used: 5e+8
             }
         },
         {
@@ -26,5 +26,15 @@ app.factory('accountsData', function () {
                 total: 1.5e+10,
                 used: 1e+10
             }
-        }];
+        },
+        {
+            id: 4,
+            idService: 3,
+            name: 'iCloud personal account',
+            size: {
+                total: 1.5e+10,
+                used: 1e+10
+            }
+        }
+    ];
 });

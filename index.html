@@ -14,8 +14,8 @@
             <span flex></span>
         </div>
         <span flex></span>
-        <div class="md-body-2">Firstname Lastname</div>
-        <div class="md-body-1">email@domainname.com</div>
+        <div class="md-body-2">Skunkwork</div>
+        <div class="md-body-1">cloudy@cloudreach.com</div>
     </md-toolbar>
     <md-list>
         <md-list-item class="md-2-line" ng-repeat="item in menu" role="link" md-ink-ripple>
@@ -35,9 +35,11 @@
     </md-list>
 </md-sidenav>
 <div layout="column" class="relative" layout-fill role="main">
+    <!--
     <md-button class="md-fab md-fab-bottom-right" aria-label="Add" ng-click="showAdd($event)">
         <md-icon md-svg-icon="content:ic_add_24px" aria-label="Plus"></md-icon>
     </md-button>
+    -->
     <md-toolbar class="animate-show md-tall md-whiteframe-z1" ng-show="!showSearch">
         <div class="md-toolbar-tools">
             <md-button class="md-icon-button" ng-click="toggleSidenav('left')" hide-gt-md aria-label="Menu">
@@ -190,6 +192,7 @@
 <script src="app/app.js"></script>
 
 <script src="app/controllers/upload-controller.js"></script>
+<script src="app/controllers/dashboard-controller.js"></script>
 
 <script src="app/models/services.js"></script>
 <script src="app/models/accounts.js"></script>
