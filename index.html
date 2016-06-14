@@ -1,6 +1,7 @@
 <html lang="en" ng-app="StarterApp">
 <head>
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.css">
+    <link rel="stylesheet" href="//rawgit.com/shuyu/angular-material-fileinput/master/dist/lf-ng-md-file-input.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body layout="row" ng-controller="AppCtrl">
@@ -100,9 +101,7 @@
         <ui-view layout="column" layout-fill layout-padding>
             <div class="inset" hide-sm></div>
 
-            <md-content layout-padding ng-view="">
-
-            </md-content>
+            <md-content layout-padding ng-view="" style="background-color: white;"></md-content>
 
 
             <!--<ng-switch on="data.selectedIndex" class="tabpanel-container">-->
@@ -188,8 +187,14 @@
 <!-- Angular Material -->
 <script src="//ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.js"></script>
 
+<script src="//rawgit.com/shuyu/angular-material-fileinput/master/dist/lf-ng-md-file-input.js"></script>
+
 <script src="app/app.js"></script>
+
 <script src="app/controllers/upload-controller.js"></script>
 <script src="app/controllers/dashboard-controller.js"></script>
+
+<script src="app/models/services.js"></script>
+<script src="app/models/accounts.js"></script>
 </body>
 </html>

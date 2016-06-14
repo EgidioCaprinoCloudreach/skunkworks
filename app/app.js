@@ -1,4 +1,4 @@
-var app = angular.module('StarterApp', ['ngMaterial', 'ngRoute']);
+var app = angular.module('StarterApp', ['ngMaterial', 'ngRoute', 'lfNgMdFileInput']);
 
 app.config(function ($routeProvider) {
     $routeProvider.when('/upload', {
