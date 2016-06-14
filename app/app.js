@@ -1,13 +1,16 @@
 var app = angular.module('StarterApp', ['ngMaterial', 'ngRoute', 'lfNgMdFileInput']);
 
 app.config(function ($routeProvider) {
-    $routeProvider.when('/upload', {
-        templateUrl: 'app/partials/upload.html',
-        controller: 'UploadController'
-    }).when('/dashboard', {
-        templateUrl: 'app/partials/dashboard.html',
-        controller: 'DashboardController'
-    }).otherwise('/dashboard');
+    $routeProvider
+        .when('/upload', {
+            templateUrl: 'app/partials/upload.html',
+            controller: 'UploadController'
+        })
+        .when('/dashboard', {
+            templateUrl: 'app/partials/dashboard.html',
+            controller: 'DashboardController'
+        })
+        .otherwise('/dashboard');
 });
 
 app.controller('AppCtrl', ['$scope', '$mdBottomSheet', '$mdSidenav', '$mdDialog', function ($scope, $mdBottomSheet, $mdSidenav, $mdDialog) {
@@ -25,34 +28,34 @@ app.controller('AppCtrl', ['$scope', '$mdBottomSheet', '$mdSidenav', '$mdDialog'
     // Menu items
     $scope.menu = [
         {
-            link: '/dashboard',
+            link: '#/dashboard',
             title: 'Dashboard',
             icon: 'action:ic_dashboard_24px'
         },
         {
-            link: '/upload',
+            link: '#/upload',
             title: 'Upload a file',
             icon: 'file:ic_cloud_upload_24px' // we have to use Google's naming convention for the IDs of the SVGs in the spritesheet
         },
         {
-            link: '/search',
+            link: '#/search',
             title: 'Search a file',
             icon: 'action:ic_search_24px'
         }
     ];
     $scope.admin = [
         {
-            link: '/accounts',
+            link: '#/accounts',
             title: 'Accounts',
             icon: 'social:ic_group_24px'
         },
         {
-            link: '/rules',
+            link: '#/rules',
             title: 'Upload rules',
             icon: 'action:ic_gavel_24px'
         },
         {
-            link: '',
+            link: '#/settings',
             title: 'Settings',
             icon: 'action:ic_settings_24px'
         }
